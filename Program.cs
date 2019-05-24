@@ -23,6 +23,7 @@ namespace ConsoleAppTest
 
             ExtractLinks(lstOfLinks, webpageUrl, targetDomain);
             FormatLinkToShow(lstOfLinks);
+
             Console.ReadLine();
 
         }
@@ -34,7 +35,6 @@ namespace ConsoleAppTest
             foreach (var link in links)
             {
                 AddLinksToObjct(lstOfLinks, link);
-                Console.WriteLine(link);
             }
         }
 
@@ -45,6 +45,10 @@ namespace ConsoleAppTest
             {
                 var desc = link.description;
                 var li = link.link;
+                if (string.IsNullOrEmpty(desc))
+                {
+                    desc = li.Split('/')[2];
+                }
                 var show = string.Format("{0} - {1}", desc, li);
                 Console.WriteLine(show);
             }
