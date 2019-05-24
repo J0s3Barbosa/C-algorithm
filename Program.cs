@@ -30,8 +30,8 @@ namespace ConsoleAppTest
 
         private static void ExtractLinks(List<Link> lstOfLinks, string webpageUrl, string targetDomain)
         {
-            var linkFinder = new LinkFinder();
-            var links = linkFinder.FindLinksToDomainOnWebPage(webpageUrl, targetDomain);
+            var lnkVerifier = new LinkVerifier();
+            var links = lnkVerifier.FindLinksWithDomainOnWebPage(webpageUrl, targetDomain);
             foreach (var link in links)
             {
                 AddLinksToObjct(lstOfLinks, link);

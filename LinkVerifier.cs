@@ -7,10 +7,10 @@ namespace ConsoleAppTest
 {
 
 
-    public class LinkFinder
+    public class LinkVerifier
     {
 
-        public IEnumerable<AnchorTag> FindLinksToDomainOnWebPage(string webpageUrl, string targetDomain)
+        public IEnumerable<AnchorTag> FindLinksWithDomainOnWebPage(string webpageUrl, string targetDomain)
         {
             HtmlDocument htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(GetWebsiteHtml(webpageUrl));
