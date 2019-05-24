@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using HtmlAgilityPack;
+﻿using HtmlAgilityPack;
+using System.Collections.Generic;
 using System.Net;
+using System.Text;
 
 namespace ConsoleAppTest
 {
+
+
     public class LinkFinder
     {
 
@@ -23,11 +25,13 @@ namespace ConsoleAppTest
                 {
                     var anchorTag = new AnchorTag();
                     foreach (var attribute in tag.Attributes)
-
+                    {
                         if (attribute.Name == "href")
                         {
                             anchorTag.Attributes.Add(attribute.Name, attribute.Value);
                         }
+                    }
+
                     anchorTag.InnerText = tag.InnerText;
                     yield return anchorTag;
                 }
@@ -42,15 +46,15 @@ namespace ConsoleAppTest
         }
     }
 
-        public class AnchorTag
-        {
-            public Dictionary<string, string> Attributes { get; private set; }
-            public string InnerText { get; set; }
+    public class AnchorTag
+    {
+        public Dictionary<string, string> Attributes { get; private set; }
+        public string InnerText { get; set; }
 
-            public AnchorTag()
-            {
-                Attributes = new Dictionary<string, string>();
-            }
+        public AnchorTag()
+        {
+            Attributes = new Dictionary<string, string>();
+        }
 
         public override string ToString()
         {
@@ -58,19 +62,13 @@ namespace ConsoleAppTest
             sb.AppendLine("InnerText: " + InnerText);
             sb.AppendLine("Attributes:");
             foreach (var attribute in Attributes)
+            {
                 sb.AppendLine("\t" + attribute.Key + "=" + attribute.Value);
+            
+            }
+
             return sb.ToString();
         }
 
-        //public override string ToString()
-        //    {
-        //        StringBuilder sb = new StringBuilder();
-        //        sb.AppendLine("InnerText: " + InnerText);
-        //        sb.AppendLine("Attributes:");
-        //        foreach (var attribute in Attributes)
-        //            sb.AppendLine("\t" + attribute.Key + "=" + attribute.Value);
-        //        return sb.ToString();
-        //    }
-
-        }
     }
+}
