@@ -15,7 +15,7 @@ namespace ConsoleAppTest
     {
         public string Rank { get; set; }
         public string Name { get; set; }
-        public int Battles { get; set; }
+        public string Battles { get; set; }
         public int Wins { get; set; }
         public int ClanCards { get; set; }
 
@@ -32,21 +32,61 @@ namespace ConsoleAppTest
             var webpageUrl = "https://github.com/appchto";
             string targetDomain = "github.com";
 
-            string targetElement = "div.clan__donation";
             var clashUrl = "https://statsroyale.com/clan/2YRQPJG8";
-            var clashUrlWar = "https://statsroyale.com/clan/2YRQPJG8/war";
+            string targetElement = "div.clan__donation";
             string targetElementTabWar = "div.clanParticipants__row";
+
+            start:
+            Console.WriteLine("Insert Clan's link");
+
+            var warlink = Console.ReadLine();
+
+            while (string.IsNullOrEmpty(warlink) || string.IsNullOrWhiteSpace(warlink))
+            {
+                Console.WriteLine("Insert Clan's link");
+                warlink = Console.ReadLine();
+            }
+
+
+            if (!warlink.StartsWith("https") && warlink != "list")
+            {
+                var clanId = warlink;
+                warlink = string.Format("https://statsroyale.com/clan/{0}/war", clanId);
+            }
+            else if (warlink.StartsWith("https") && !warlink.EndsWith("war"))
+            {
+                var addWar = "war";
+                warlink = string.Format("{0}/{1}", warlink, addWar );
+            }
+            else if (warlink == "list")
+            {
+                Console.WriteLine("Insert a list of Clan's link split by comma");
+                warlink = Console.ReadLine();
+
+                var lstOfclashLinks = warlink.Split(',');
+                foreach (var item in lstOfclashLinks)
+                {
+                   var itemclashUrl = item.Replace("war", "");
+
+                    GetNumberOfPlayersAndDonations(lnkVerifier, targetElement, itemclashUrl);
+
+                    GetWarNumberOfPlayersAndDonations(lnkVerifier, targetElementTabWar, item);
+                }
+                goto start;
+            }
+
+            clashUrl = warlink.Replace("war", "");
 
             GetNumberOfPlayersAndDonations(lnkVerifier, targetElement, clashUrl);
 
-            GetWarNumberOfPlayersAndDonations(lnkVerifier, targetElementTabWar, clashUrlWar);
+            GetWarNumberOfPlayersAndDonations(lnkVerifier, targetElementTabWar, warlink);
 
 
             /*
             ExtractLinks(lstOfLinks, webpageUrl, targetDomain);
             FormatLinkToShow(lstOfLinks);
             */
-            Console.ReadLine();
+            goto start;
 
         }
 
@@ -89,7 +129,8 @@ namespace ConsoleAppTest
                         warData.Name = item.InnerText;
                         break;
                     case 2:
-                        warData.Battles = int.Parse(item.InnerText);
+
+                        warData.Battles = item.InnerText;
                         break;
                     case 3:
                         warData.Wins = int.Parse(item.InnerText);
@@ -155,7 +196,7 @@ namespace ConsoleAppTest
                     greatDonations++;
                 }
 
-                Console.WriteLine(resultD);
+                //Console.WriteLine(resultD);
             }
             var totalOfplayers = numberOfPlayers.Count;
             var resultT = string.Format("Number of players - {0}", totalOfplayers);
