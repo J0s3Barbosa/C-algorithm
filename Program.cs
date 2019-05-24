@@ -48,7 +48,7 @@ namespace ConsoleAppTest
             }
 
 
-            if (!warlink.StartsWith("https") && warlink != "list")
+            if (!warlink.StartsWith("https") && warlink != "l")
             {
                 var clanId = warlink;
                 warlink = string.Format("https://statsroyale.com/clan/{0}/war", clanId);
@@ -58,7 +58,7 @@ namespace ConsoleAppTest
                 var addWar = "war";
                 warlink = string.Format("{0}/{1}", warlink, addWar );
             }
-            else if (warlink == "list")
+            else if (warlink == "l")
             {
                 Console.WriteLine("Insert a list of Clan's link split by comma");
                 warlink = Console.ReadLine();
@@ -68,9 +68,9 @@ namespace ConsoleAppTest
                 {
                    var itemclashUrl = item.Replace("war", "");
 
-                    GetNumberOfPlayersAndDonations(lnkVerifier, targetElement, itemclashUrl);
+                    GetNumberOfPlayersAndDonations(lnkVerifier, targetElement, itemclashUrl.Trim());
 
-                    GetWarNumberOfPlayersAndDonations(lnkVerifier, targetElementTabWar, item);
+                    GetWarNumberOfPlayersAndDonations(lnkVerifier, targetElementTabWar, item.Trim());
                 }
                 goto start;
             }
