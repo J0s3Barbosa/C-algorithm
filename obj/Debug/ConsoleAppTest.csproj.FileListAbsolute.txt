@@ -13,6 +13,7 @@ C:\Repository\gitRepo\C-algorithm\obj\Debug\ConsoleAppTest.csproj.CoreCompileInp
 C:\Repository\gitRepo\C-algorithm\obj\Debug\ConsoleAppTest.exe
 C:\Repository\gitRepo\C-algorithm\obj\Debug\ConsoleAppTest.pdb
 C:\Repository\gitRepo\C-algorithm\bin\Debug\HtmlAgilityPack.dll
-C:\Repository\gitRepo\C-algorithm\bin\Debug\HtmlAgilityPack.pdb
 C:\Repository\gitRepo\C-algorithm\bin\Debug\HtmlAgilityPack.xml
 C:\Repository\gitRepo\C-algorithm\obj\Debug\ConsoleAppTest.csproj.CopyComplete
+C:\Repository\gitRepo\C-algorithm\bin\Debug\HtmlAgilityPack.CssSelectors.dll
+C:\Repository\gitRepo\C-algorithm\bin\Debug\HtmlAgilityPack.CssSelectors.pdb

@@ -1,31 +1,178 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 
 namespace ConsoleAppTest
 {
 
-    public  class Link
+    public class Link
     {
         public string description { get; set; }
         public string link { get; set; }
 
     }
+    public class WarData
+    {
+        public string Rank { get; set; }
+        public string Name { get; set; }
+        public int Battles { get; set; }
+        public int Wins { get; set; }
+        public int ClanCards { get; set; }
 
+    }
     internal class Program
     {
 
 
         private static void Main(string[] args)
         {
+            var lnkVerifier = new LinkVerifier();
+
             List<Link> lstOfLinks = new List<Link>();
             var webpageUrl = "https://github.com/appchto";
             string targetDomain = "github.com";
 
+            string targetElement = "div.clan__donation";
+            var clashUrl = "https://statsroyale.com/clan/2YRQPJG8";
+            var clashUrlWar = "https://statsroyale.com/clan/2YRQPJG8/war";
+            string targetElementTabWar = "div.clanParticipants__row";
+
+            GetNumberOfPlayersAndDonations(lnkVerifier, targetElement, clashUrl);
+
+            GetWarNumberOfPlayersAndDonations(lnkVerifier, targetElementTabWar, clashUrlWar);
+
+
+            /*
             ExtractLinks(lstOfLinks, webpageUrl, targetDomain);
             FormatLinkToShow(lstOfLinks);
-
+            */
             Console.ReadLine();
 
+        }
+
+        private static void GetWarNumberOfPlayersAndDonations(LinkVerifier lnkVerifier, string targetElement, string clashUrl)
+        {
+            var numberOfPlayers = new List<HtmlNode>();
+            var lstWarData = new List<WarData>();
+            var zeroWins = 0;
+            var greatWins = 0;
+
+            var data = lnkVerifier.FindElementsOnWebPage(clashUrl, targetElement);
+
+            CountingPlayers(numberOfPlayers, data);
+
+            FillObjWithWarData(lstWarData, ref zeroWins, ref greatWins, data);
+
+            Console.WriteLine(NumberOfPlayersInWar(lstWarData));
+
+            var resultzeroWins = string.Format("Number of Zero Wins - {0}", zeroWins);
+
+            var resultgreatWins = string.Format("Number of Wins - {0}", greatWins);
+
+            Console.WriteLine(resultzeroWins);
+
+            Console.WriteLine(resultgreatWins);
+        }
+
+        private static void FillObjWithWarData(List<WarData> lstWarData, ref int zeroWins, ref int greatWins, IEnumerable<HtmlNode> data)
+        {
+            var warData = new WarData();
+            var count = 0;
+            foreach (var item in data)
+            {
+                switch (count)
+                {
+                    case 0:
+                        warData.Rank = item.InnerText;
+                        break;
+                    case 1:
+                        warData.Name = item.InnerText;
+                        break;
+                    case 2:
+                        warData.Battles = int.Parse(item.InnerText);
+                        break;
+                    case 3:
+                        warData.Wins = int.Parse(item.InnerText);
+                        if (warData.Wins == 0)
+                        {
+                            zeroWins++;
+                        }
+                        else
+                        {
+                            greatWins++;
+                        }
+
+                        break;
+
+                }
+                if (count == 4)
+                {
+                    warData.ClanCards = int.Parse(item.InnerText);
+                    lstWarData.Add(warData);
+                    count = 0;
+                }
+                else
+                {
+                    count++;
+                }
+
+            }
+        }
+
+        private static string NumberOfPlayersInWar(List<WarData> lstWarData)
+        {
+            var totalOfplayers = lstWarData.Count;
+            var resultT = string.Format("Number of players in War - {0}", totalOfplayers);
+            return resultT;
+        }
+
+        private static string FormatMessageToShow(string message, object formated)
+        {
+            return string.Format(message + " - {0}", formated);
+        }
+
+        private static void GetNumberOfPlayersAndDonations(LinkVerifier lnkVerifier, string targetElement, string clashUrl)
+        {
+            var numberOfPlayers = new List<HtmlNode>();
+            var zeroDonations = 0;
+            var greatDonations = 0;
+
+            var data = lnkVerifier.FindElementsOnWebPage(clashUrl, targetElement);
+
+            CountingPlayers(numberOfPlayers, data);
+
+            foreach (var item in data)
+            {
+                var NumberOfDonations = int.Parse(item.InnerText);
+                var resultD = string.Format("Donations - {0}", NumberOfDonations);
+
+                if (NumberOfDonations == 0)
+                {
+                    zeroDonations++;
+                }
+                else if (NumberOfDonations >= 400)
+                {
+                    greatDonations++;
+                }
+
+                Console.WriteLine(resultD);
+            }
+            var totalOfplayers = numberOfPlayers.Count;
+            var resultT = string.Format("Number of players - {0}", totalOfplayers);
+            Console.WriteLine(resultT);
+
+            var resultZ = string.Format("Number of Zero Donations - {0}", zeroDonations);
+            var resultGreatDonations = string.Format("Number of Donations Over 400 - {0}", greatDonations);
+            Console.WriteLine(resultZ);
+            Console.WriteLine(resultGreatDonations);
+        }
+
+        private static void CountingPlayers(List<HtmlNode> listOfZeroDonations, IEnumerable<HtmlNode> data)
+        {
+            foreach (var countingItem in data)
+            {
+                listOfZeroDonations.Add(countingItem);
+            }
         }
 
         private static void ExtractLinks(List<Link> lstOfLinks, string webpageUrl, string targetDomain)

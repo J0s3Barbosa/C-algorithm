@@ -12,6 +12,14 @@ namespace ConsoleAppTest
     public class LinkVerifier
     {
 
+        public IEnumerable<HtmlNode> FindElementsOnWebPage(string webpageUrl, string targetClassOrElement)
+        {
+            HtmlDocument htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(GetWebsiteHtml(webpageUrl));
+
+            return htmlDocument.QuerySelectorAll(targetClassOrElement);
+        }
+
         public IEnumerable<AnchorTag> FindLinksWithDomainOnWebPage(string webpageUrl, string targetDomain)
         {
             HtmlDocument htmlDocument = new HtmlDocument();
