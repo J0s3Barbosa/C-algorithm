@@ -1,0 +1,7 @@
+C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\bin\Debug\ConsoleAppTest.exe.config
+C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\bin\Debug\ConsoleAppTest.exe
+C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\bin\Debug\ConsoleAppTest.pdb
+C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest.csprojAssemblyReference.cache
+C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest.csproj.CoreCompileInputs.cache
+C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest.exe
+C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest.pdb
