@@ -13,6 +13,7 @@ namespace ConsoleAppTest
             var dates = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
 
             var weekDays = new List<string>() { "dom", "seg", "ter", "qua", "qui", "sex", "sab" };
+
             var countDays = dates.Length;
             var countWaves = waves.Count;
             var countWeekDays = weekDays.Count;
@@ -50,7 +51,8 @@ namespace ConsoleAppTest
                 }
             };
 
-
+            Console.WriteLine("Press any key to continue!");
+            Console.ReadKey();
 
         }
     }
