@@ -1,0 +1,15 @@
+C:\projects\hk\git\C-algorithm\WavesLogic\bin\Debug\net7.0\WavesLogic.exe
+C:\projects\hk\git\C-algorithm\WavesLogic\bin\Debug\net7.0\WavesLogic.deps.json
+C:\projects\hk\git\C-algorithm\WavesLogic\bin\Debug\net7.0\WavesLogic.runtimeconfig.json
+C:\projects\hk\git\C-algorithm\WavesLogic\bin\Debug\net7.0\WavesLogic.dll
+C:\projects\hk\git\C-algorithm\WavesLogic\bin\Debug\net7.0\WavesLogic.pdb
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.csproj.AssemblyReference.cache
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.AssemblyInfoInputs.cache
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.AssemblyInfo.cs
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.csproj.CoreCompileInputs.cache
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.dll
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\refint\WavesLogic.dll
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.pdb
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\WavesLogic.genruntimeconfig.cache
+C:\projects\hk\git\C-algorithm\WavesLogic\obj\Debug\net7.0\ref\WavesLogic.dll
