@@ -5,3 +5,11 @@ C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest
 C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest.csproj.CoreCompileInputs.cache
 C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest.exe
 C:\Repository\bitBucketRepo\tasksolution\ConsoleAppTest\obj\Debug\ConsoleAppTest.pdb
+C:\projects\hk\git\C-algorithm\bin\Debug\ConsoleAppTest.exe.config
+C:\projects\hk\git\C-algorithm\bin\Debug\ConsoleAppTest.exe
+C:\projects\hk\git\C-algorithm\bin\Debug\ConsoleAppTest.pdb
+C:\projects\hk\git\C-algorithm\obj\Debug\ConsoleAppTest.csproj.AssemblyReference.cache
+C:\projects\hk\git\C-algorithm\obj\Debug\ConsoleAppTest.csproj.SuggestedBindingRedirects.cache
+C:\projects\hk\git\C-algorithm\obj\Debug\ConsoleAppTest.csproj.CoreCompileInputs.cache
+C:\projects\hk\git\C-algorithm\obj\Debug\ConsoleAppTest.exe
+C:\projects\hk\git\C-algorithm\obj\Debug\ConsoleAppTest.pdb
