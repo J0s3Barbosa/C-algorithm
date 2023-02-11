@@ -1,0 +1,59 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "ClashClanDashboard/1.0.0": {
+        "dependencies": {
+          "HtmlAgilityPack.CssSelectors": "1.0.2"
+        },
+        "runtime": {
+          "ClashClanDashboard.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.4.9": {
+        "runtime": {
+          "lib/Net45/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.4.9.0",
+            "fileVersion": "1.4.9.0"
+          }
+        }
+      },
+      "HtmlAgilityPack.CssSelectors/1.0.2": {
+        "dependencies": {
+          "HtmlAgilityPack": "1.4.9"
+        },
+        "runtime": {
+          "lib/net45/HtmlAgilityPack.CssSelectors.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClashClanDashboard/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HtmlAgilityPack/1.4.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-anZIsi7bbHZ35ZZzvCA+gVWC/mEXVhcJjJvxr3wzUEDsOE4uk0Fa0ZiaxVn83AZpVKVO4RHyqamPkzzJbMUgmQ==",
+      "path": "htmlagilitypack/1.4.9",
+      "hashPath": "htmlagilitypack.1.4.9.nupkg.sha512"
+    },
+    "HtmlAgilityPack.CssSelectors/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bB4FeVvcNROENPWQfFSmPQ6q99jGk8ru5QoBB3qnEeaP451fjnqQ0uPuMgmWHAOZIXUAoOQozv/5fEEVSDyIzA==",
+      "path": "htmlagilitypack.cssselectors/1.0.2",
+      "hashPath": "htmlagilitypack.cssselectors.1.0.2.nupkg.sha512"
+    }
+  }
+}

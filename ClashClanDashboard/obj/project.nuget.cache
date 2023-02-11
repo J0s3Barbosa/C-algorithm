@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "b88ygWMQai+l5aic0Xoxa/QHEBaafPvykBfJOK96nGaXAgML2k0K3+0Y+cpnZSvKgRAs/eUDKOGAJTUxGu17GQ==",
+  "success": true,
+  "projectFilePath": "C:\\projects\\hk\\git\\C-algorithm\\ClashClanDashboard\\ClashClanDashboard.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hasht\\.nuget\\packages\\htmlagilitypack\\1.4.9\\htmlagilitypack.1.4.9.nupkg.sha512",
+    "C:\\Users\\hasht\\.nuget\\packages\\htmlagilitypack.cssselectors\\1.0.2\\htmlagilitypack.cssselectors.1.0.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'HtmlAgilityPack 1.4.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "HtmlAgilityPack",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'HtmlAgilityPack.CssSelectors 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "HtmlAgilityPack.CssSelectors",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
+}
